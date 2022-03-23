@@ -1,6 +1,7 @@
 ## 김동영의 Source Code 저장 공간
 - 각자의 공간에서 개발을 진행 한 뒤, 추후 합친다.
-- Commit/Push 할 때는 각자의 Branch를 사용하고, Push 하기 전에 Pull/Update를 하여 상대가 이전에 올린 코드가 있는지 확인한다.
+- Commit/Push 할 때는 각자의 Branch를 사용한다. 
+- 그리고 정기적으로 main 브랜치에 Pull Request를 한다.
 
 ## Commit Message Convention
 ```text
