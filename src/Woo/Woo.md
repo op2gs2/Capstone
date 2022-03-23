@@ -2,6 +2,8 @@
 - 각자의 공간에서 개발을 진행 한 뒤, 추후 합친다.
 - Commit/Push 할 때는 각자의 Branch를 사용한다. 
 - 그리고 정기적으로 main 브랜치에 Pull Request를 한다.
+    - 아래 Commit 메시지는 Main 브랜치에 Pull Request 하기 전이나 Main 브렌치에 Commit하기 전에 적는다.
+    - 개인 브랜치에서는 어떤 식으로 적어도 상관 없다.
 
 ## Commit Message Convention
 ```text
