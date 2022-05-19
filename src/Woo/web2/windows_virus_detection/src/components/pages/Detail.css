@@ -1,0 +1,39 @@
+
+.detail-container {
+    height: 80vh;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(136, 136, 136, 0.774);
+    justify-content: center;
+    object-fit: contain;
+}
+.detail-container > h1{
+    margin-left: 30px;
+    color: Black;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width : 960px){
+    .detail-container{
+        margin-top:100px;
+    }
+    .detail-container > h1{
+        font-size: 40px;
+        margin-top: -1500px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .detail-container{
+        margin-top:100px;
+    }
+    .detail-container > h1{
+        font-size: 40px;
+        margin-top: -100px;
+    }
+    .detail-container >p {
+        font-size: 20px;
+    }
+}
