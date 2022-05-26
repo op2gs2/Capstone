@@ -5,10 +5,10 @@ import Footer from '../Footer/Footer';
 
 function Home() {
     return (
-        <>
+        <div>
         <MainSection />
         <Footer/>
-        </>
+        </div>
     )
 }
 

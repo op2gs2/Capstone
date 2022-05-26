@@ -16,10 +16,24 @@ app.get('/', (req, res) => {
     res.send('연결 되었습니다.')
 });
 
-app.get('/api/get', (req, res) => {
-    const sqlQuery = "SELECT * FROM FileHeader;";
-    db.query(sqlQuery, (err, result)=>{
-        res.send(result);
+app.get('/api/getData', (req, res) => {
+    const sqlQuery = "SELECT K.MD5, K.SHA, K.name, H.NumberOfSections, H.Machine,\
+    O.AddressOfEntryPoint, O.ImageBase, O.FileAlignment, O.SizeOfImage, O.SizeOfHeader,\
+    S.SectionName, S.VirtualSize, S.VirtualAddress, S.SizeOfRawData, S.PointerToRawData\
+    FROM FileKey AS K \
+    JOIN FileHeader AS H ON K.MD5 = H.MD5\
+    JOIN OptionalHeader AS O ON O.MD5=K.MD5\
+    JOIN SectionHeader AS S ON S.MD5=K.MD5\
+    WHERE K.MD5 = '13' ;";
+    db.query(sqlQuery, (err, data)=>{
+        if (err) {
+            console.log('err');
+            res.send(err);
+        }
+        else{
+            console.log('success');
+            res.send(data);
+        }
     })
 });
 
