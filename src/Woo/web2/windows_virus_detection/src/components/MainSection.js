@@ -10,7 +10,6 @@ function MainSection() {
             <h1>Windows Virus Detection</h1>
             <p>We detect your dangerous window virus.</p>
             <div className="main-btns">
-
                 <Upload/>
             </div>
 

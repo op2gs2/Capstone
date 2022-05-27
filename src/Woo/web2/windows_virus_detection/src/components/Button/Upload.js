@@ -1,18 +1,21 @@
 
 import AWS from 'aws-sdk';
 import { Row, Col, Button, Input, Alert } from 'reactstrap';
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Upload.css';
+import BMF from 'browser-md5-file';
+import axios from 'axios';
 function Upload() {
     const [progress, setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
     const [showAlert, setShowAlert] = useState(false);
+    const [MD5, setMD5] = useState();
+    const bmf = new BMF();
 
-    const ACCESS_KEY = 'AKIA4XBACY5Z7JRF7I3Q';
-    const SECRET_ACCESS_KEY = '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';
+    const ACCESS_KEY = 'AKIA4XBACY5Z5AZGC62V';
+    const SECRET_ACCESS_KEY = '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';
     const REGION = "us-east-1";
     const S3_BUCKET = 'file-data-bucket';
-
     AWS.config.update({
         region: REGION,
         accessKeyId: ACCESS_KEY,
@@ -27,19 +30,28 @@ function Upload() {
     const handleFileInput = (e) => {
         const file = e.target.files[0];
         const fileExt = file.name.split('.').pop();
-        if (file.type !== 'image/jpeg' || fileExt !== 'jpg') {
-            alert('jpg 파일만 Upload 가능합니다.');
-            return;
-        }
         setProgress(0);
         setSelectedFile(e.target.files[0]);
+        bmf.md5(
+            file,
+            (err, md5) => {
+                console.log('err:', err);
+                console.log('md5 string:', md5); // 97027eb624f85892c69c4bcec8ab0f11
+                setMD5(md5);
+
+            },
+            progress => {
+                console.log('progress number:', progress);
+            },
+        );
+
     }
     const uploadFile = (file) => {
         const params = {
             ACL: 'public-read',
             Body: file,
             Bucket: S3_BUCKET,
-            Key: "upload/" + file.name
+            Key: file.name//"upload/" +
         };
 
         myBucket.putObject(params)
@@ -54,7 +66,20 @@ function Upload() {
             .send((err) => {
                 if (err) console.log(err)
             })
+
     }
+
+    const send = () => {
+        axios.post("/api/setMD5", {
+            md: MD5
+        })
+            .then(function (response) {
+                console.log(response);// response  
+            }).catch(function (error) {
+                // 오류발생시 실행
+            })
+    }
+
     return (
         <div className="App">
             <div className="App-body">
@@ -71,12 +96,12 @@ function Upload() {
                     <Col><div className='filebox'>
                         <label for="file">Upload</label>
                         <Input color="primary" type="file" id="file" onChange={handleFileInput} />
-                        
-                        </div>
+
+                    </div>
                         {selectedFile ? (
-                            <Button className="Button" color="primary" onClick={() => uploadFile(selectedFile)}> Upload to S3</Button>
+                            <Button className="Button" color="primary" onClick={() => { uploadFile(selectedFile); send(); }}> Upload to S3 </Button>
                         ) : null}
-                        
+
                     </Col>
                 </Row>
             </div>

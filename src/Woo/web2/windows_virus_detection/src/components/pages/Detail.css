@@ -40,7 +40,12 @@ table {
   .tables{
       font-size:20px;
   }
-
+.load{
+    font-size: 150px;
+}
+.nodata{
+    font-size: 150px;
+}
 @media screen and (max-width : 960px){
     .detail-container{
         margin-top:100px;

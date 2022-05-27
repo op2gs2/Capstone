@@ -32,7 +32,7 @@ function About() {
                         <img className='profile-img' alt='profile-img' src='/public_assets/kim.png' />
                     </div>
                     <span>안녕하세요 저는 한림대학교에 재학중인 빅데이터 학과 김동영라고 합니다.<br /> 저는 이 개발 프로젝트에서 악성코드 탐지 프로그램 개발을 담당하였습니다.<br />
-                        악성코드 탐지 프로그램은 CNN모델 기반으로 제작되었으며 추후 AWS에 탑재 예정입니다.
+                        악성코드 탐지 프로그램은 CNN모델 기반으로 제작되었으며  AWS에 탑재 되어있습니다.
                         <br /><br />
                         <a href='https://github.com/op2gs2'><img className='social' alt='social-icon' src='/public_assets/git.png' /></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;

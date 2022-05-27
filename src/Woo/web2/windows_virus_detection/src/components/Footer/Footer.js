@@ -9,73 +9,27 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>About Us</h2>
-                        <Link to='/About'>How it works</Link>
+                        
                         <Link to='/About'>Careers</Link>
                     </div>
                     <div class='footer-link-items'>
                         <h2>Contact Us</h2>
-                        <Link to='/'>Contact</Link>
-                        <Link to='/'>Support</Link>
+                        <a href="mailto:wgunhee@gmail.com">Contact</a>
+                        <a href='https://hlsw.hallym.ac.kr/index.php'>Support</a>
                     </div>
                     </div>
                     <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>Videos</h2>
-                        <Link to='#https://www.youtube.com/watch?v=Lent6ad4x7k'>Using Video</Link>
+                        <a href='https://www.youtube.com/watch?v=Lent6ad4x7k'>How it works</a>
                     </div>
                     <div class='footer-link-items'>
                         <h2>Social Media</h2>
-                        <Link to='/'>GitHub</Link>
+                        <a href='https://github.com/op2gs2/Capstone'>GitHub</a>
                     </div>
                 </div>
             </div>
-            <section className="social-media">
-                <div className="social-media-wrap">
-                    <div className="footer-logo">
-                        <Link to='/' className="social-logo">
-                            TRVL <i className="fab fa-typo3"></i>
-                        </Link>
-                    </div>
-                    <small className="website-rights">TRVL © 2020</small>
-                    <div className="social-icons">
-                        <Link className="social-icon-link facebook" to="/"
-                        target = "_blank"
-                        aria-label="Facebook"
-                        >
-                            <i className="fab fa-facebook-f"></i>
-                        </Link>
-                        <Link className="social-icon-link instagram" to="/"
-                        target = "_blank"
-                        aria-label="Instagram"
-                        >
-                            <i className="fab fa-instagram"></i>
-                        </Link>
-                        <Link class='social-icon-link youtube'
-                        to='/'
-                        target='_blank'
-                        aria-label='Youtube'
-                        >
-                        <i class='fab fa-youtube' />
-                        </Link>
-                        <Link
-                        class='social-icon-link twitter'
-                        to='/'
-                        target='_blank'
-                        aria-label='Twitter'
-                        >
-                        <i class='fab fa-twitter' />
-                        </Link>
-                        <Link
-                        class='social-icon-link twitter'
-                        to='/'
-                        target='_blank'
-                        aria-label='LinkedIn'
-                        >
-                        <i class='fab fa-linkedin' />
-                        </Link>
-                    </div>
-                </div>
-            </section>
+ 
         </div>
     )
 }
