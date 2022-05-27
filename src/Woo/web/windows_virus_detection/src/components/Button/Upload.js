@@ -12,8 +12,8 @@ function Upload() {
     const [MD5, setMD5] = useState();
     const bmf = new BMF();
 
-    const ACCESS_KEY = 'AKIA4XBACY5Z5AZGC62V';
-    const SECRET_ACCESS_KEY = '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';
+    const ACCESS_KEY = '';
+    const SECRET_ACCESS_KEY = '';
     const REGION = "us-east-1";
     const S3_BUCKET = 'file-data-bucket';
     AWS.config.update({
