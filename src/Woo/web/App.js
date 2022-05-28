@@ -5,7 +5,7 @@ const port = 3001;
 const cors = require('cors');
 const mysql = require('mysql');
 const db = mysql.createPool({
-    host: 'capstons-db.cuwqixyzmmdw.us-east-1.rds.amazonaws.com',
+    host: 'capstones-db.ctnb1rzrtlxs.us-east-1.rds.amazonaws.com',
     user: 'admin',
     port: '3306',
     password: 'capstondb',
