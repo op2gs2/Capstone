@@ -11,7 +11,7 @@ function Detail() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const { data: response } = await axios.get('/api/getData');
+        const { data: response } = await axios.get('api/getData');
         setData(response);
         console.log(response);
         

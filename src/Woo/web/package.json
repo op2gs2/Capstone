@@ -9,6 +9,7 @@
     "express": "^4.18.1",
     "md5-file": "^5.0.0",
     "mysql": "^2.18.1",
+    "nginx": "^1.0.7",
     "nodemon": "^2.0.16",
     "reactstrap": "^9.0.2"
   },
@@ -19,9 +20,21 @@
     "client": "cd windows_virus_detection && npm start",
     "server": "nodemon App.js",
     "dev": "concurrently --kill-others-on-fail \"npm run client\"    \"npm run server\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:server":"babel src -d build"
+  },
+  "pkg": {
+    "scripts": "*.js",
+    "targets": [
+      "node12-win-x64"
+    ]
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "pkg": "^5.7.0"
+  }
 }
